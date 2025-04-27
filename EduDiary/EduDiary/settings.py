@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'teamtest',
     'drf_spectacular',
+    'user',
+    'django_extensions',
 
 ]
 
