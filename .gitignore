@@ -17,7 +17,9 @@ pip-delete-this-directory.txt
 *.log
 *.pot
 *.pyc
-.sqlite3  # SQLite3 база данных (локальная)
+*.sqlite3  # SQLite3 база данных (локальная)
+db.sqlite3
+**/db.sqlite3  # Убедимся, что файл исключен в любой директории
 migrations/  # Миграции (чтобы не коммитить автоматически сгенерированные файлы)
 staticfiles/
 media/  # Папка для медиафайлов (например, аватары)
