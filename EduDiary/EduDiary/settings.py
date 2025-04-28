@@ -21,9 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-load_dotenv()
+# Загружаем .env
+env_path = BASE_DIR / '.env'
+load_dotenv(dotenv_path=env_path)
+
+# Читаем переменные
 SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 
 ALLOWED_HOSTS = ['*']
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'teamtest',
     'drf_spectacular',
+
     'user',
     'django_extensions',
     'rest_framework',
